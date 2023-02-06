@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int num, k;
+	int count = 0;
+
+	cin >> num >> k;
+
+	while (1) {
+		if (num % k == 0) {
+			num /= k;
+			count++;
+		}
+		else {
+			num--;
+			count++;
+		}
+
+		if (num == 1)
+			break;
+	}
+
+	cout << count;
+}
