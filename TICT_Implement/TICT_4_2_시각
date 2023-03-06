@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+	int num;
+	int time;
+	string str;
+	int count = 0;
+
+	cin >> num;
+	
+	for (int i = 0; i <= num; i++) {
+		for (int j = 0; j <= 59; j++) {
+			for (int k = 0; k <= 59; k++) {
+				time = 10000 * i + 100 * j + k;
+				str = to_string(time);
+
+				if (str.find("3") != string::npos) {	//string find() 위치를 반환하는거기 땜에 조건에 'found되지 않았다는 위치 부정' 조건
+					count++;
+				}
+			}
+		}
+	}
+
+	cout << count;
+}
