@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+bool compare1(pair<string, int> a, pair<string, int> b) {
+	return a.second < b.second;	//value값만 이용해서 오름차순으로 정렬
+}
+
+int main() {
+	vector<pair<string, int>> student;
+	string name;
+	int grade, n;
+
+	cin >> n;
+	
+	for (int i = 0; i < n; i++) {
+		cin >> name >> grade;
+		student.push_back({name, grade});
+	}
+
+	sort(student.begin(), student.end(), compare1);
+
+	for (int i = 0; i < n; i++) {
+		cout << student[i].first << " ";	//key값으로 출력
+	}
+}
