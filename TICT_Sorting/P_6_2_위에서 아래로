@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int arr[500];
+
+int main(void) {
+	int n;
+
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+
+	sort(arr, arr + n, greater<>());	//greater<>() -> 내림차순, 오름차순 정렬은 default값
+
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << ' ';
+
+	return 0;
+}
