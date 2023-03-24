@@ -1,0 +1,34 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+vector<int> d;
+vector<int> f;
+
+int main() {
+	int size, f_size;
+	int n, f_n;
+
+	cin >> size;
+	for (int i = 0; i < size; i++) {
+		cin >> n;
+		d.push_back(n);
+	}
+
+	cin >> f_size;
+	for (int i = 0; i < f_size; i++) {
+		cin >> f_n;
+		f.push_back(f_n);
+	}
+
+	sort(d.begin(), d.end());
+
+	for (int i = 0; i < f_size; i++) {
+		if (binary_search(d.begin(), d.end(), f[i]))
+			cout << "yes ";
+		else
+			cout << "no ";
+	}
+}
